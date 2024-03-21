@@ -1,1 +1,3 @@
 # pensamentoComputacional
+
+*SCN*: colaboracão
