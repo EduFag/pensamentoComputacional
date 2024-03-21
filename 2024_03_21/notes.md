@@ -1,3 +1,4 @@
+# 21 de março de 2024 - anotações de aula
 ## Trabalho em equipe
 
 - SCM - Source Code Management - Sistemas de Versionamento de Código
@@ -9,16 +10,19 @@
 
 ### (O mais famoso)
 
-- Git
+- ***Git***
+    - Distributed Version Control
+    - Offline
+    - Each user has a copy of the full repository
+    - Ease to fork, branch and merge
 
-    Distributed Version Control
-    Offline
-    Each user has a copy of the full repository
-    Ease to fork, branch and merge
 
-| O que versionar ?  | O que não versionar ?   |
+| `O que versionar ?` | `O que não versionar ?`   |
 | ------------------ | ---------------------   |
 | Documentação       | Senhas ou chaves de API |
 | Código fonte       | Logs de aplicacão       |
 | Testes             | Informacões sensíveis.  |
-| Imagens e binários | Dados do usuário        |                                   
+| Imagens e binários | Dados do usuário        | 
+
+- obs
+  - GitHub.com é um serviço (adquirido pela Microsoft) que agrega funcionalidade aos repositórios git
