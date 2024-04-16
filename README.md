@@ -1,36 +1,7 @@
-# pensamentoComputacional
+# pensamentoComputacional - Anotações de aula
 
-*SCN*: colabor**acão**
+### links
 
-## Jogos
-
-- RDR
-  - RDR1
-  - RDR2
-- Minecraft
-- Super Mário
-- Dark Souls
-- NFS
-
-## Itens
-
-- **item1**
-  - *item1.1*
-    - item1.1.1
-- **item2**
-  - *item2.1*
-    - item2.1.1
-    - item2.1.2
-  - *item2.2*
-    - item2.2.1
-    - item2.2.2
-    - item2.2.3
-
-### Imagem
-
-![alt text](image.png)
-
-### link
-
-[anotacões da aula](2024_03_21/notes.md)
+- [Aula - 21/03/2024](2024_03_21/notes.md) [ git, colaboração e portfólio pessoal ]  <br>
+- [Aula - 15/04/2024](2024_04_15/notes.md) [ python e linguagens de programação ]
 
