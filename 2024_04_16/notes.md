@@ -1,4 +1,4 @@
-# Anotações de aula (16/04/2024 - introdução ao python | variáveis e operadores matemáticos)
+# Notas de aula (16/04/2024 - introdução ao python | variáveis e operadores matemáticos)
 ## Convenções em nomenclaturas
 
 Convenções são práticas não obrigatórias de
