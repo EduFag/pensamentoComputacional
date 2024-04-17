@@ -79,3 +79,19 @@ variável
 - quociente inteiro da divisão ( // )
 - resto da divisão ( % )
 - exponenciacão ( ** )
+
+## Exercício de aula
+
+````
+L = int(input("digite a largura do retângulo:"))
+A = int(input("digite a altura do retângulo:"))
+
+area = L*A
+perimetro = 2*(L+A)
+hipotenusa = (L**2 + A**2)**(1/2)
+
+print("área do retângulo =", area)
+print("Perímetro do retângulo =", perimetro)
+print("Hipotenusa do retângulo =", hipotenusa)
+
+````
