@@ -1,0 +1,13 @@
+listas mutavel
+
+len - retorna o comprimento da lista
+
+<nome_lista>[n] = <elemento> - atribuição (substituir elemento)
+
+intervalos não icluem o ultimo elemento
+
+
+
+
+Laços de repetição
+range - retorna uma lista de numeros 
