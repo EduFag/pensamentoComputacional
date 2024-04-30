@@ -1,78 +1,16 @@
-# multiplicação de uma matriz por um Escalar (k)
-A = [
-    [1, 2],
-    [3, 4],
-]
-k = 2
+numeros = []
+for i in range(3):
+    numeros.append(str(i))
 
-for linha in range(len(A)):
-    for coluna in range(len(A[linha])):
-        A[linha][coluna] *= k
+letras = []
+for i in range (3):
+    letras.append(chr(97 + i))
 
-for i in A:
-    print(i)
+letras_upper = []
+for i in range (3):
+    letras_upper.append(chr(65 + i))
 
-print('')
-
-# soma de duas matrizes
-A = [
-    [1, 2],
-    [3, 4],
-]
-B = [
-    [5, 6],
-    [7, 8],
-]
-for linha in range(len(A)):
-    for coluna in range(len(A[linha])):
-        A[linha][coluna] += B[linha][coluna]
-
-for i in A:
-    print(i)
-
-print('')
-
-# Multiplicação de Matrizes
-
-A = [
-    [1, 2],
-    [3, 4],
-]
-B = [
-    [5, 6],
-    [7, 8],
-]
-
-AB = [
-    [None, None],
-    [None, None],
-]
-
-for linha in range(len(A)):
-    for coluna in range(len(A[linha])):
-        if linha == 0 and coluna == 0:
-            AB[linha][coluna] = (A[linha][coluna] * B[linha][coluna]) + (A[linha][coluna + 1] * B[linha + 1][coluna])
-        elif linha == 0 and coluna == 1:
-            AB[linha][coluna] = (A[linha][coluna - 1] * B[linha][coluna]) + (A[linha][coluna] * B[linha + 1][coluna])
-        elif linha == 1 and coluna == 0:
-            AB[linha][coluna] = (A[linha][coluna] * B[linha - 1][coluna]) + (A[linha][coluna + 1] * B[linha][coluna])
-        else:
-            AB[linha][coluna] = (A[linha][coluna - 1] * B[linha - 1][coluna]) + (A[linha][coluna] * B[linha][coluna])
-
-for i in AB:
-    print(i)
-
-
-listas mutavel
-
-len - retorna o comprimento da lista
-
-<nome_lista>[n] = <elemento> - atribuição (substituir elemento)
-
-intervalos não icluem o ultimo elemento
-
-
-
-
-Laços de repetição
-range - retorna uma lista de numeros 
+for numero in numeros:
+    for letra in letras:
+        for letra_upper in letras_upper:
+            senha = numero + letra + letra_upper
