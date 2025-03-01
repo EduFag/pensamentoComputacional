@@ -1,0 +1,51 @@
+VALORES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+'.', ',', ';', '!', '?', 'Á', 'Ã', 'À', 'Â', 'É', 'Ê', 'Í', 'Ó', 'Õ', 'Ô', 'Ú', 'Ü', 'Ç']
+
+NUMERO_DE_VALORES_ASSOCIADOS = 43
+
+texto_criptografado = input('Texto criptografado: ')
+
+shift = -44
+texto_decifrado = ''
+
+
+palavras_criptografadas = texto_criptografado.split('#')
+
+def decodifica_palavra(palavra, shift):
+    palavra_decifrada = ''
+    for char in palavra:
+        if 0 <= VALORES.index(char) <= 42:
+            shifted_char = VALORES[(VALORES.index(char) + shift) % NUMERO_DE_VALORES_ASSOCIADOS]
+            palavra_decifrada += shifted_char
+        else:
+            palavra_decifrada += char
+        for lin in open('dic.txt'):
+            if palavra_decifrada.lower() in lin:
+                return True
+        return False
+
+def decodifica_frase(palavras_criptografadas, shift):
+    palavras_decodificadas = []
+    palavra_decifrada = ''
+    for palavra in palavras_criptografadas:
+        for char in palavra:
+            if 0 <= VALORES.index(char) <= 42:
+                shifted_char = VALORES[(VALORES.index(char) + shift) % NUMERO_DE_VALORES_ASSOCIADOS]
+                palavra_decifrada += shifted_char
+            else:
+                palavra_decifrada += char
+        palavras_decodificadas.append(palavra_decifrada)
+        return ' '.join(palavras_decodificadas)
+        
+maior_pontuacao, shift_atual = 0, shift     
+while shift < 44:
+    shift += 1
+    pontuacao = 0
+    for palavra in palavras_criptografadas:
+        palavra_existente = decodifica_palavra(palavra, shift)
+        if palavra_existente:
+            pontuacao += 1
+    if pontuacao > maior_pontuacao:
+        maior_pontuacao, shift_atual = pontuacao, shift
+
+print(decodifica_frase(palavras_criptografadas, shift_atual))
