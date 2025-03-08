@@ -1,14 +1,26 @@
+import os
+
 VALORES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
 '.', ',', ';', '!', '?', 'Á', 'Ã', 'À', 'Â', 'É', 'Ê', 'Í', 'Ó', 'Õ', 'Ô', 'Ú', 'Ü', 'Ç']
-
-shift = -44
+    
+def carregar_dicionario(nome_arquivo):
+    pasta_atual = os.path.dirname(os.path.abspath(__file__))  
+    caminho_arquivo = os.path.join(pasta_atual, nome_arquivo)  
+    dicionario = set()
+    if os.path.exists(caminho_arquivo):
+        with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
+            for linha in arquivo:
+                dicionario.add(linha.strip().lower())  # Adiciona palavras no formato minúsculo
+    else:
+        print(f"O arquivo {caminho_arquivo} não foi encontrado.")
+    return dicionario
 
 def decodifica_palavra(palavra, shift):
     palavra_decifrada = ''
     for char in palavra:
-        if 0 <= VALORES.index(char) <= 43:
+        if char in VALORES:
             shifted_char = VALORES[
-                ((VALORES.index(char) + shift) % 44) - 1
+                ((VALORES.index(char) + shift) % 44)
             ]
             palavra_decifrada += shifted_char
         else:
@@ -22,12 +34,13 @@ def decodifica_frase(palavras_criptografadas, shift):
     return ' '.join(palavras_decodificadas)
 
 def palavra_existente(palavra):
-    for lin in open('dic.txt', encoding='utf-8'):
-        if palavra.lower() in lin:
-            return True
-    return False
+    if palavra.lower() in dicionario:
+        return True
+    else:
+        return False
 
-
+shift = 0
+dicionario = carregar_dicionario('dic.txt')
 texto_criptografado = input('digite o texto para ser decifrado: ')
 palavras_criptografadas = texto_criptografado.split('#')
 
@@ -43,4 +56,6 @@ while shift < 44:
     if pontuacao > maior_pontuacao:
         maior_pontuacao, shift_atual = pontuacao, shift
 
+print('Chave descriptografada:')
 print(decodifica_frase(palavras_criptografadas, shift_atual))
+print(f'A chave é:{shift_atual}')
